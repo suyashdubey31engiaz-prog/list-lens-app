@@ -4,7 +4,7 @@ import Tesseract from 'tesseract.js';
 import './App.css';
 
 // ⚠️ YOUR IP ADDRESS
-const API_URL = 'http://10.226.30.182:5000/api'; 
+const API_URL = 'https://list-lens-api.onrender.com/api';
 
 const generateId = () => Date.now().toString() + Math.floor(Math.random() * 1000);
 
