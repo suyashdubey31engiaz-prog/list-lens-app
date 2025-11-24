@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -12,9 +13,8 @@ const PORT = process.env.PORT || 5000; // Deployment Ready Port
 app.use(cors({ origin: '*' })); // Allows all connections (Phone, Laptop)
 app.use(bodyParser.json());
 
-// ⚠️ PASTE YOUR EDITED ATLAS URI HERE
 // Example: mongoose.connect('mongodb+srv://user:pass@cluster0.abcde.mongodb.net/scan_app_final?retryWrites=true&w=majority')
-mongoose.connect('mongodb+srv://suyash-dubey_31:bx36YS5olOwcHAIF@cluster0.7umv5h9.mongodb.net/scan_app_final?appName=Cluster0', {
+mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
